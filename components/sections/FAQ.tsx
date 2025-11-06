@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -43,26 +44,33 @@ export default function FAQ() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
               Usein Kysytyt Kysymykset
             </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            <p className="max-w-[900px] text-lg text-muted-foreground md:text-xl lg:text-2xl">
               Vastauksia yleisimpiin kysymyksiin
             </p>
           </div>
         </div>
         <div className="mx-auto max-w-3xl space-y-4 py-12">
           {faqs.map((faq, index) => (
-            <div key={index} className="rounded-lg border bg-card">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              viewport={{ once: true }}
+              className="rounded-2xl border border-foreground/10 bg-card hover:border-primary/20 hover:shadow-lg transition-all duration-300"
+            >
               <button
-                className="flex w-full items-center justify-between p-6 text-left"
+                className="flex w-full items-center justify-between p-6 text-left group"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="text-lg font-semibold">{faq.question}</span>
-                <svg
-                  className={`h-5 w-5 transition-transform ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
+                <span className="text-lg font-semibold group-hover:text-primary transition-colors">{faq.question}</span>
+                <motion.svg
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-5 w-5 text-primary"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -71,14 +79,24 @@ export default function FAQ() {
                   stroke="currentColor"
                 >
                   <path d="M19 9l-7 7-7-7" />
-                </svg>
+                </motion.svg>
               </button>
-              {openIndex === index && (
-                <div className="px-6 pb-6">
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </div>
-              )}
-            </div>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6">
+                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
       </div>

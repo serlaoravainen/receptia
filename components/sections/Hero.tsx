@@ -85,12 +85,12 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="space-y-4"
           >
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text">
+            <h1 className="text-5xl font-semibold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl/none">
               Vastaanotto joka ei
               <br />
               <span className="text-foreground">koskaan nuku</span>
             </h1>
-            <p className="mx-auto max-w-[700px] text-lg text-muted-foreground md:text-xl">
+            <p className="mx-auto max-w-[700px] text-xl text-muted-foreground md:text-2xl font-normal">
               Palvele asiakkaitasi 24/7. Receptia vastaa puheluihin, varaa aikoja
               ja käsittelee asiakkaiden kysymykset ympäri vuorokauden.
             </p>
@@ -104,14 +104,14 @@ export default function Hero() {
           >
             <Link
               href="#yhteystiedot"
-              className="group inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-8 text-sm font-semibold text-primary-foreground transition-all hover:bg-primary/90 hover:gap-3"
+              className="group inline-flex h-14 items-center justify-center gap-2 rounded-full bg-gradient-to-br from-primary via-primary to-primary/90 px-10 text-base font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/25 hover:gap-3"
             >
               Aloita tästä
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="#miten-toimii"
-              className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-foreground/10 bg-background px-8 text-sm font-semibold transition-all hover:border-foreground/20 hover:bg-muted"
+              className="inline-flex h-14 items-center justify-center rounded-full border-2 border-foreground/10 bg-background px-10 text-base font-semibold transition-all hover:scale-105 hover:border-foreground/20 hover:bg-muted hover:shadow-lg"
             >
               Lue lisää
             </Link>

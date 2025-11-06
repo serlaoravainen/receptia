@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "mcp__chrome-devtools__take_screenshot"
+      "mcp__chrome-devtools__take_screenshot",
+      "WebSearch",
+      "WebFetch(domain:justcall.io)",
+      "WebFetch(domain:echo.win)",
+      "WebFetch(domain:www.trysetter.com)"
     ],
     "deny": [],
     "ask": []

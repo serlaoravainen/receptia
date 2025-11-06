@@ -45,7 +45,7 @@ export default function Header() {
           </Link>
           <Link
             href="#yhteystiedot"
-            className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-gradient-to-br from-primary via-primary to-primary/90 px-6 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
           >
             Ota yhteyttä
           </Link>

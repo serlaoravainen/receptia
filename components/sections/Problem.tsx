@@ -19,8 +19,11 @@ export default function Problem() {
   ];
 
   return (
-    <section id="ongelma" className="relative w-full py-16 md:py-24 lg:py-32 bg-muted/30">
-      <div className="container px-4 md:px-6">
+    <section id="ongelma" className="relative w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-muted/50 via-background to-primary/5 overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-40" />
+      <div className="container relative px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
           {/* Problem Side */}
           <motion.div
@@ -34,7 +37,7 @@ export default function Problem() {
               <div className="inline-block rounded-lg bg-destructive/10 px-3 py-1 text-sm font-medium text-destructive">
                 Ongelma
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
                 Perinteinen vastaanotto maksaa liikaa
               </h2>
             </div>
@@ -69,7 +72,7 @@ export default function Problem() {
               <div className="inline-block rounded-lg bg-foreground/5 px-3 py-1 text-sm font-medium">
                 Ratkaisu
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
                 Receptia hoitaa kaiken automaattisesti
               </h2>
             </div>
